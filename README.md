@@ -79,7 +79,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
             - Initial Bucket Name: Telegraf
         - Quick Start
             - Data
-                -API Tokens
+                - API Tokens
                     - admin's token (to get info for telegraf.conf file)
                 - 
                
@@ -103,5 +103,44 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
                         - `user_agent= "telegraf"`  
 
 
+## Airflow stage
+
+- Connect via SSH to airflow-study . 
+    - `apt-upgrade` to update the VM 
+    - Then `sudo su` command to install these services.
+
+- Check if there are any docker instance on VM : `docker ps` 
+- Go root folder: `cd /`
+- make directory for Airflow: `mkdir airflow`
+- enter airflow directory: `cd airflow`
+- Install Docker Engine: `https://docs.docker.com/engine/install/ubuntu/`
+    - to root folder: `cd /`
+    - install docker engine:
+    ` $ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release`
+    -  
+
+    - GPG key :  `sudo mkdir -p /etc/apt/keyrings`
+ `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg` ( sudo mkdir -p /etc/apt/keyrings kısmından emin değilim)!!
+ 
+    - to set up repository : `echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
+ 
+     - Install Docker Engine : `sudo apt-get update` ` sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin`
+     - Check for successfull installation : `docker ps`
+     - Check installed docker version : `docker version`
+     - List the available repos : `apt-cache madison docker-ce` (result will be entered in version_string)
+     - Install indicated version :  *sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin*
+        - `sudo apt-get install docker-ce=5:20.10.16~3-0~ubuntu-jammy docker-ce-cli=5:20.10.16~3-0~ubuntu-jammy containerd.io docker-compose-plugin`
+    - Check docker compose version : docker compose version
+    - 
+
+ 
+ 
+ 
 
  
