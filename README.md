@@ -51,11 +51,56 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - Region must be the same where VM created.  
     - Type of these address change to *Ephemeral* to *Static*   
 
+ 
+- Connect via SSH to influx-study . 
+    - `apt-upgrade` to update the VM 
+    - Then `sudo su` command to install these services.
 
-- Connect via SSH to influx-study
-- 
+- Install Influxdb 
+    - using documentation to install influx on our Linux Ubuntu installed VM.
+        -  `wget https://dl.influxdata.com/influxdb/releases/influxdb2-2.2.0-amd64.deb`  (to download)
+        -  `sudo dpkg -i influxdb2-2.2.0-amd64.deb` (to open the file)
+            - `systemctl status influxdb` (shows the status of influx service)
+            - `systemctl start influxdb`  (starts the service) 
 
+- Install Telegraf (to get system metrics as sample data) 
+    - using documentation to install Telegraf on our Linux Ubuntu installed VM.
+        -  `wget -qO- https://repos.influxdata.com/influxdb.key | sudo tee /etc/apt/trusted.gpg.d/influxdb.asc >/dev/null`
+        -  `echo "deb https://repos.influxdata.com/debian stable main" | sudo tee /etc/apt/sources.list.d/influxdb.list`
+        -  `sudo apt-get update && sudo apt-get install telegraf`
+            - `systemctl status influxdb` (shows the status of influx service)
+            - `systemctl start influxdb`  (starts the service)
 
+    - to access telegraf use external IP of influxdb VM and append port number as `:8086`
+        - get started
+            - username: admin
+            - password: password
+            - Initial Org: xyzcorp
+            - Initial Bucket Name: Telegraf
+        - Quick Start
+            - Data
+                -API Tokens
+                    - admin's token (to get info for telegraf.conf file)
+                - 
+               
+        
+    - Configure Telegraf to connect with our influxdb
+        - `cd /etc/telegraf/`
+        - `nano telegraf.conf`
+            -  we edit parameters under *outputs.influxdb_v2*
+                -  remove hashtags on:
+                    -  urls
+                        - VM's external IP instead of localhost IP (127.0.0.1)  
+                    -  token
+                        - admin's token   
+                    -  organization 
+                        - `organization = "xyzcorp"`  
+                    -  bucket
+                        - `bucket = "telegraf"`    
+                    -  timeout
+                        - `timeout = "10s"` 
+                    -  user_agent
+                        - `user_agent= "telegraf"`  
 
 
 
