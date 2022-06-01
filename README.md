@@ -137,7 +137,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
      - Install indicated version :  *sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin*
         - `sudo apt-get install docker-ce=5:20.10.16~3-0~ubuntu-jammy docker-ce-cli=5:20.10.16~3-0~ubuntu-jammy containerd.io docker-compose-plugin`
     - Check docker compose version : docker compose version
-    - 
+    - Go to airflow folder under root folder : `cd /` `cd airflow/`
 
  
  
