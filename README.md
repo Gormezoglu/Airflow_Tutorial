@@ -139,7 +139,9 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - Check docker compose version : docker compose version
     - Go to airflow folder under root folder : `cd /` `cd airflow/`
     - (info) To download any file from VM to local PC, you can use download option at upper right corner. you can write */airflow/docker-compose.yaml* in the dialog box to download docker-compose file.
+    - go to airflow folder : `cd airflow/` 
     - create yaml file via `nano docker-compose.yaml`
+    - copy from **docker-compose.yaml.txt** 
 
  
  
