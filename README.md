@@ -167,9 +167,37 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     -  check status of telegraf : `systemctl status telegraf`
     
     
-    -  
+    -  Get into dags file : `cd airlow/dags/`
+    -  create an influxdb dag file : `nano influxdb_dag.py`  (we define functions in this file and indicate dependencies at the bottom line of the file.)
+    -  paste all from Airflow-configuration.txt
+        - we import *InfluxDBOperator* to connect the airflow with influxdb
+        - we import *BashOperator* to execute commands in a Bash shell.
+        - we need to use influxdb VM IP address on tokens, buckets, and URLs in the functions.
+        - we need to adapt query which is written in flux syntax properly. (watch out for `r["host"] = <VMname>`) 
+        - to write the output on BigQuery, need to edit `project_id = <bigquery project id>`
+        - indicate the table_id where the data is written on `table_id = <tableIndicatedInFunctions>`
+    - We need to import the libraries which are taken place on `influx_dag.py` file. we do this operation in airflow-scheduler1 container. (you can find commands in *Airflow Study&HelperFunctions.txt*)
+         ```
+         sudo pip3 install virtualenv
+        virtualenv -p python3 (target folder)
+        
+        $ sudo su -
+        # .  /opt/bitnami/airflow/venv/bin/activate
+        (venv) # pip3 install influxdb
+        ...
+        (venv) # pip3 install influxdb-client
+        
+        (venv) # pip3 install apache-airflow-providers-influxdb
+        
+        (venv) # pip3 install pandas_gbq
 
-
+        python3 -m venv --upgrade ```
+        
+    - then `exit` from the virtual environment.
+    - scheduler container.
+    - execute with `docker exec -it -u 0 542 bash`  to access the airflow-scheduler container.
+    - 
+1:31:21
 
     
 
