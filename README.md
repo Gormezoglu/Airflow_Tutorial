@@ -1,4 +1,4 @@
-# Airflow_Tutorial
+# Airflow & InfluxDB on Google Cloud Platform (GCP) Walkthrough
 In this study, I will try to explain to set airflow jobs on Google Cloud Platform (GCP) step-by-step.
 
 
@@ -146,17 +146,31 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         - since we define `AIRFLOW_EXECUTER=LocalExecutor` , any airflow-worker nodes fail since it just run on master thanks to *LocalExecutor* notion
         - save and exit
     - make directory for DAGs : `mkdir dags`
-    - if any plugin is used   : `mkdir dags plugin`
+    - if any plugins is used   : `mkdir dags plugins`
     - if any scripts are used, new folder is created under dags folder : `cd dags/`  `mkdir scripts`
 - Install Airflow :  
     -  use yaml file to install Airflow : `docker-compose up -d` (-d is for detached run)
     -  check downloaded images and status of containers: `docker ps`  (`docker ps -a` for all containers, which are included failed containers)
     -  We need to define username and password for Airflow. we can do on airflow_airflow-scheduler1
-        - execute with `docker exec -it -u 0 542 bash`  (542 is the first 3 digit of Container ID of airflow scheduler)
+        - execute with `docker exec -it -u 0 542 bash`  to access the container. (542 is the first 3 digit of Container ID of airflow scheduler)
         - ![image](https://user-images.githubusercontent.com/46892583/171581001-b1aabbe2-bcc7-41c9-a4d6-69a7685b5f2f.png)
+        - to create credentials : `airflow users create --username admin --firstname melih --lastname melih --role Admin --password admin --email admin@airflow`
+        - to exit from container : `exit`
   
-    -  access to UI : <airflow VM IP>:8080
-        -  
+    -  access to UI : `<airflow VM IP>:8080`
+        -  username : admin
+        -  password : admin
+    
+    -  to activate the changes that we made on telegraf.conf file we restart the service : `systemctl restart influxdb`
+    -  to see the activities of Influxdb : `journalctl -fu influxdb`
+    -  restart telegraf as well: `systemctl restart telegraf`
+    -  check status of telegraf : `systemctl status telegraf`
+    
+    
+    -  
+
+
+
     
 
  
