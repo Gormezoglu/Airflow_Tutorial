@@ -141,7 +141,23 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - (info) To download any file from VM to local PC, you can use download option at upper right corner. you can write */airflow/docker-compose.yaml* in the dialog box to download docker-compose file.
     - go to airflow folder : `cd airflow/` 
     - create yaml file via `nano docker-compose.yaml`
-    - copy from **docker-compose.yaml.txt** 
+    - copy from **docker-compose.yaml.txt**
+        - we need PostgreSQL to keep DAG's metadata  
+        - since we define `AIRFLOW_EXECUTER=LocalExecutor` , any airflow-worker nodes fail since it just run on master thanks to *LocalExecutor* notion
+        - save and exit
+    - make directory for DAGs : `mkdir dags`
+    - if any plugin is used   : `mkdir dags plugin`
+    - if any scripts are used, new folder is created under dags folder : `cd dags/`  `mkdir scripts`
+- Install Airflow :  
+    -  use yaml file to install Airflow : `docker-compose up -d` (-d is for detached run)
+    -  check downloaded images and status of containers: `docker ps`  (`docker ps -a` for all containers, which are included failed containers)
+    -  We need to define username and password for Airflow. we can do on airflow_airflow-scheduler1
+        - execute with `docker exec -it -u 0 542 bash`  (542 is the first 3 digit of Container ID of airflow scheduler)
+        - ![image](https://user-images.githubusercontent.com/46892583/171581001-b1aabbe2-bcc7-41c9-a4d6-69a7685b5f2f.png)
+  
+    -  access to UI : <airflow VM IP>:8080
+        -  
+    
 
  
  
