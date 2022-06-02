@@ -67,12 +67,15 @@ Install any module:
 sudo pip3 install virtualenv
 virtualenv -p python3 (target folder)
 
-pip3 install apache-airflow-providers-influxdb
 $ sudo su -
 # .  /opt/bitnami/airflow/venv/bin/activate
 (venv) # pip3 install influxdb
 ...
 (venv) # pip3 install influxdb-client
+
+(venv) # pip3 install apache-airflow-providers-influxdb
+
+(venv) # pip3 install pandas_gbq
 
 python3 -m venv --upgrade
 
