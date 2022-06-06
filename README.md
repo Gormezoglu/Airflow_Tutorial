@@ -197,7 +197,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - scheduler container.
     - execute with `docker exec -it -u 0 542 bash`  to access the airflow-scheduler container.
     - 
-1:31:21
+1:31:21 devam
 
     
 
