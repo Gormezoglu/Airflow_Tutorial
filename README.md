@@ -14,7 +14,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - Firewall:
         - Allow HTTP & HTTPS traffic ( for development purpose only. In production, take in consideration of security constraints.)
     - Access scopes : Allow full access to all Cloud APIs
-    - Then hit "Crate"
+    - Then hit "Create"
     - In VPC Networks, allow the belowmentioned port numbers to being allowed to use these services.  
         - Influx default port # : 8086
         
