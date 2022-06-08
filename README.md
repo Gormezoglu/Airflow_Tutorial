@@ -27,7 +27,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 
 - New VM instance created for Airflow 
     - name &rarr; airflow-study
-    - region &rarr; us-central1(Oregon) | Zone &rarr; us-west1-b 
+    - region &rarr; us-central1(Oregon) | Zone &rarr; us-west1-a 
     - machine type: e2-standart-2 
     - Under BootDisk -> 
         - operating system : Ubuntu
@@ -42,7 +42,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         
         - airflow default port # : 8080
             - Crate firewall rule 
-                - name: influx-db
+                - name: airflow
                 - logs: off -> prevent additional cost
                 - Source IPv4 ranges : 0.0.0.0/0 &rarr; All IP address
                 - Protocols and ports: specified protocols and ports -> tcp: 8080 (airflow)
