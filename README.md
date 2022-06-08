@@ -220,8 +220,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 - restart telegraf as well: `systemctl restart telegraf`
 - check status of telegraf : `systemctl status telegraf`
 - in "airflow/dags" folder, create a file as `nano influxdb_dag.py` and paste the codes inside of *"Airflow-configuration.txt"* file.    
-```
-</details>
+```</details>
 
 
     
