@@ -194,11 +194,15 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         python3 -m venv --upgrade ```
         
     - then `exit` from the virtual environment.
-    - scheduler container.
-    - execute with `docker exec -it -u 0 542 bash`  to access the airflow-scheduler container.
-    - 
-1:31:21 devam
-
+    - We do the configurations on scheduler container.
+    - execute with `docker exec -it -u 0 542 bash`  to access the airflow-scheduler container. (542 is the starting 3 digits of scheduler container's ID)
+    - To define username and password:  `airflow users create  --username admin --firstname melih --lastname gor --role Admin --password admin --email admin@airflow` command.
+    - exit from the container `exit`
+    
+    
+    ## Create a DAG
+    
+    -
     
 
  
