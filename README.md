@@ -166,7 +166,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     -  restart telegraf as well: `systemctl restart telegraf`
     -  check status of telegraf : `systemctl status telegraf`
     
-    
+    -  in each container, related airflow files take place in `cd /opt/bitnami/airflow/`
     -  Get into dags file : `cd airlow/dags/`
     -  create an influxdb dag file : `nano influxdb_dag.py`  (we define functions in this file and indicate dependencies at the bottom line of the file.)
     -  paste all from Airflow-configuration.txt
@@ -200,19 +200,22 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - Since we installed the required libraries, the warning on upper banner must be dissappear.
     - `cd airflow/dags/scripts` and `nano command.sh` to copy commands in command.sh file
     - to make command.sh executable we need to `chmod +x command.sh`
-    - 
+    - At UI, DAG: influxdb_query_operator must be activated via button
+    - Then press "play" button to trigger DAG without waiting Scheduled time-interval
+    - Then check "log" to see how the process gone. if log is not seen, then check the given error to correct. (usual suspect is equalize Secret Keys with airflow and scheduler containers.)
+    - This correction needed to be made in related container. (scheduler_1 and airflow_1)
+    - Then restart the containers `docker restart 6a6` (6a6 is the first three characters of airflow_1 container)
 
 
 
 
 <details>
-<summary>Additional Info</summary>
+<summary>Summary Info</summary>
 
 - To define username and password:  `airflow users create  --username admin --firstname melih --lastname gor --role Admin --password admin --email admin@airflow` command.
 - exit from the container `exit`
 
 
-## Create a DAG
 
 - Refresh services to allow changes on configurations : `systemctl restart influxdb` 
 - Check the status of restarted service : `systemctl status influxdb`
