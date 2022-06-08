@@ -195,14 +195,30 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         
     - then `exit` from the virtual environment.
     - We do the configurations on scheduler container.
-    - execute with `docker exec -it -u 0 542 bash`  to access the airflow-scheduler container. (542 is the starting 3 digits of scheduler container's ID)
+    - execute with `docker exec -it -u 0 542 bash`  to access the airflow-scheduler container. (542 is the starting 3 digits of scheduler container's ID) (we can find out Container ID via `docker ps`command.
+    - Reach UI of Airflow
+    - Since we installed the required libraries, the warning on upper banner must be dissappear.
+    - `cd airflow/dags/scripts` and `nano command.sh` to copy commands in command.sh file
+    - to make command.sh executable we need to `chmod +x command.sh`
+    - 
+
+
+
+
+
+
     - To define username and password:  `airflow users create  --username admin --firstname melih --lastname gor --role Admin --password admin --email admin@airflow` command.
     - exit from the container `exit`
     
     
     ## Create a DAG
     
-    -
+    - Refresh services to allow changes on configurations : `systemctl restart influxdb` 
+    - Check the status of restarted service : `systemctl status influxdb`
+    - to see the activities of Influxdb : `journalctl -fu influxdb`
+    - restart telegraf as well: `systemctl restart telegraf`
+    - check status of telegraf : `systemctl status telegraf`
+    - in "airflow/dags" folder, create a file as `nano influxdb_dag.py` and paste the codes inside of *"Airflow-configuration.txt"* file.
     
 
  
