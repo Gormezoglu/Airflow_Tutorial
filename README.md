@@ -207,7 +207,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 
 <details>
 <summary>Additional Info</summary>
-```
+`
 - To define username and password:  `airflow users create  --username admin --firstname melih --lastname gor --role Admin --password admin --email admin@airflow` command.
 - exit from the container `exit`
 
@@ -219,8 +219,9 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 - to see the activities of Influxdb : `journalctl -fu influxdb`
 - restart telegraf as well: `systemctl restart telegraf`
 - check status of telegraf : `systemctl status telegraf`
-- in "airflow/dags" folder, create a file as `nano influxdb_dag.py` and paste the codes inside of *"Airflow-configuration.txt"* file.    
-```</details>
+- in "airflow/dags" folder, create a file as `nano influxdb_dag.py` and paste the codes inside of *"Airflow-configuration.txt"* file.
+`
+</details>
 
 
     
