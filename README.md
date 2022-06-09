@@ -126,7 +126,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
   
 
     - GPG key :  `sudo mkdir -p /etc/apt/keyrings`
- `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg` ( sudo mkdir -p /etc/apt/keyrings kısmından emin değilim)!!
+ `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg` 
  
     - to set up repository : 
   ```
