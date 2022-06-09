@@ -145,7 +145,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - Go to airflow folder under root folder : `cd /` `cd airflow/`
     - (info) To download any file from VM to local PC, you can use download option at upper right corner. you can write */airflow/docker-compose.yaml* in the dialog box to download docker-compose file.
     - go to airflow folder : `cd airflow/` 
-    - create yaml file via `nano docker-compose.yaml`
+    - create a new yaml file via `nano docker-compose.yaml`
     - copy from **docker-compose.yaml.txt**
         - we need PostgreSQL to keep DAG's metadata  
         - since we define `AIRFLOW_EXECUTER=LocalExecutor` , any airflow-worker nodes fail since it just run on master thanks to *LocalExecutor* notion
