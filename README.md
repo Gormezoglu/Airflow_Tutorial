@@ -75,7 +75,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         - get started
             - username: admin
             - password: password
-            - Initial Org: xyzcorp
+            - Initial Org: ACME
             - Initial Bucket Name: Telegraf
         - Quick Start
             - Data
@@ -94,7 +94,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
                     -  token
                         - admin's token   
                     -  organization 
-                        - `organization = "xyzcorp"`  
+                        - `organization = "ACME"`  
                     -  bucket
                         - `bucket = "telegraf"`    
                     -  timeout
@@ -116,11 +116,11 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 - Install Docker Engine: `https://docs.docker.com/engine/install/ubuntu/`
     - to root folder: `cd /`
     - install docker engine:
-    ` $ sudo apt-get install \
+    ``` $ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release`
+    lsb-release```
     -  
 
     - GPG key :  `sudo mkdir -p /etc/apt/keyrings`
