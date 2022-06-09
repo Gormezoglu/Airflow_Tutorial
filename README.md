@@ -116,7 +116,8 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 - Install Docker Engine: `https://docs.docker.com/engine/install/ubuntu/`
     - to root folder: `cd /`
     - install docker engine:
-    ```$ sudo apt-get install \
+    ```
+    $ apt-get install \
     ca-certificates \
     curl \
     gnupg \
@@ -127,9 +128,12 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - GPG key :  `sudo mkdir -p /etc/apt/keyrings`
  `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg` ( sudo mkdir -p /etc/apt/keyrings kısmından emin değilim)!!
  
-    - to set up repository : `echo \
+    - to set up repository : 
+  ```
+  $ echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  ```
  
      - Install Docker Engine : `sudo apt-get update` ` sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin`
      - Check for successfull installation : `docker ps`
