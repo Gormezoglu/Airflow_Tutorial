@@ -150,7 +150,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         - we need PostgreSQL to keep DAG's metadata  
         - since we define `AIRFLOW_EXECUTER=LocalExecutor` , any airflow-worker nodes fail since it just run on master thanks to *LocalExecutor* notion
         - save and exit
-    - make directory for DAGs : `mkdir dags`
+    - make directory in airflow for DAGs : `mkdir dags`
     - if any plugins is used   : `mkdir dags plugins`
     - if any scripts are used, new folder is created under dags folder : `cd dags/`  `mkdir scripts`
 - Install Airflow :  
