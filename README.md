@@ -153,7 +153,8 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - make directory in airflow for DAGs : `mkdir dags`
     - if any plugins is used   : `mkdir dags plugins`
     - if any scripts are used, new folder is created under dags folder : `cd dags/`  `mkdir scripts`
-- Install Airflow :  
+- Install Airflow : 
+    - `apt install docker-compose` 
     -  use yaml file to install Airflow : `docker-compose up -d` (-d is for detached run)
     -  check downloaded images and status of containers: `docker ps`  (`docker ps -a` for all containers, which are included failed containers)
     -  We need to define username and password for Airflow. we can do on airflow_airflow-scheduler1
