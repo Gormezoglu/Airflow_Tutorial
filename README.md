@@ -75,8 +75,8 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         - get started
             - username: admin
             - password: password
-            - Initial Org: ACME
-            - Initial Bucket Name: Telegraf
+            - Initial Org: acme
+            - Initial Bucket Name: telegraf
         - Quick Start
             - Data
                 - API Tokens
@@ -87,6 +87,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
     - Configure Telegraf to connect with our influxdb
         - `cd /etc/telegraf/`
         - `nano telegraf.conf`
+            -  we commentout `*[[outputs.influxdb]]*`
             -  we edit parameters under *outputs.influxdb_v2*
                 -  remove hashtags on:
                     -  urls
@@ -94,7 +95,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
                     -  token
                         - admin's token   
                     -  organization 
-                        - `organization = "ACME"`  
+                        - `organization = "acme"`  
                     -  bucket
                         - `bucket = "telegraf"`    
                     -  timeout
