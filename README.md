@@ -183,13 +183,13 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         - we need to adapt query which is written in flux syntax properly. (watch out for `r["host"] = <VMname>`) 
         - to write the output on BigQuery, need to edit `project_id = <bigquery project id>`
         - indicate the table_id where the data is written on `table_id = <tableIndicatedInFunctions>`
-    - We need to import the libraries which are taken place on `influx_dag.py` file. we do this operation in airflow-scheduler1 container. (you can find commands in *Airflow Study&HelperFunctions.txt*)
+    - We face with an error on Airflow UI. To solve this problem, we need to import the libraries which are taken place on `influx_dag.py` file. we do this operation in airflow-scheduler1 container. (you can find commands in *Airflow Study&HelperFunctions.txt*)
          ```
-         sudo pip3 install virtualenv
+        $ sudo pip3 install virtualenv 
         virtualenv -p python3 (target folder)
         
-        $ sudo su -
-        # .  /opt/bitnami/airflow/venv/bin/activate
+        
+        $ .  /opt/bitnami/airflow/venv/bin/activate #(to turn into venv)
         (venv) # pip3 install influxdb
         ...
         (venv) # pip3 install influxdb-client
@@ -198,7 +198,8 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
         
         (venv) # pip3 install pandas_gbq
 
-        python3 -m venv --upgrade ```
+        python3 -m venv --upgrade
+        ```
         
     - then `exit` from the virtual environment.
     - We do the configurations on scheduler container.
