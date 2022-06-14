@@ -221,7 +221,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 <summary>Summary Info</summary>
 
 - To define username and password:  `airflow users create  --username admin --firstname melih --lastname gor --role Admin --password admin --email admin@airflow` command.
-- exit from the container `exit`
+- exit from the container `exit`. 
 
 
 
