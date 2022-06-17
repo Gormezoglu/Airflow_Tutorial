@@ -1,5 +1,5 @@
 # Airflow & InfluxDB on Google Cloud Platform (GCP) Walkthrough
-In this study, I will try to explain to set airflow jobs on Google Cloud Platform (GCP) step-by-step.
+In this study, I will try to explain to set airflow jobs on Google Cloud Platform (GCP) step-by-step. .
 
 
 - New VM instance created for influxdb (we choose influxdb since it provides system metrics in default.)
