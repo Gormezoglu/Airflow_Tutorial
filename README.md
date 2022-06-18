@@ -136,7 +136,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   ```
  
-     - Install Docker Engine : `sudo apt-get update` ` sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin`
+     - Install Docker Engine (`https://docs.docker.com/compose/install/compose-plugin/`): `sudo apt-get update` ` sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin`
      - Check for successfull installation : `docker ps`
      - Check installed docker version : `docker version`
      - List the available repos : `apt-cache madison docker-ce` (result will be entered in version_string)
