@@ -116,9 +116,9 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 - enter airflow directory: `cd airflow`
 - Install Docker Engine: `https://docs.docker.com/engine/install/ubuntu/`
     - to root folder: `cd /`
-    - install docker engine:
+    - install docker engine: (`https://docs.docker.com/engine/install/ubuntu/`)
     ```
-    $ apt-get install \
+    apt-get install \
     ca-certificates \
     curl \
     gnupg \
