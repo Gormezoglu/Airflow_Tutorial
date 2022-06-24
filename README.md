@@ -81,8 +81,7 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
             - Data
                 - API Tokens
                     - admin's token (to get info for telegraf.conf file)
-                - 
-               
+                            
         
     - Configure Telegraf to connect with our influxdb
         - `cd /etc/telegraf/`
@@ -222,8 +221,6 @@ In this study, I will try to explain to set airflow jobs on Google Cloud Platfor
 
 - To define username and password:  `airflow users create  --username admin --firstname melih --lastname gor --role Admin --password admin --email admin@airflow` command.
 - exit from the container `exit`. 
-
-
 
 - Refresh services to allow changes on configurations : `systemctl restart influxdb` 
 - Check the status of restarted service : `systemctl status influxdb`
