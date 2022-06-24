@@ -32,21 +32,6 @@ aggregate function : last
 
 
 
-Bu çalışmada Influxdb 2.1.1 sürümündeki sistem metrikleri üzerinden hesaplamalar Airflow kullanılarak yapılacaktır. 
-Buradaki senaryoda sistem metriklerinin bir dashboard üzerinden görselleştirilmeye ihtiyacı vardır. 
-Hedef dashboard hazırlayacak kişiye bu verilerin sorunsuz bir şekilde belirli aralıklarla sağlanmasıdır. (scheduler interval= 10 min)
-
-Airflow kurulumu yapıldıktan sonra yapılacak işlem sırası şu şekilde olmalıdır:
-
-- 1 nolu task sistemin kullandığı cpu0 değerini yüzdelik dilime çevirsin ve cloud üzerinde bigquery de bir table içerisine yazsın.
-- 2 nolu task 1 nolu task çalıştıktan sonra aynı şekilde sistemin kullandığı cpu1 değerini yüzdelik dilim olarak hesaplayıp bigquerye yazsın.
-- 3 ve 4 nolu tasklar 2 nolu task çalıştıktan sonra aynı anda çalışmaya başlasın ve her iki taskta toplam kaynak miktarının
-   kullanılan kaynak miktarına oranını yüzdelik bir dilim olarak hesaplayıp bigqueryde table içerine yazsın.
-- Bu tasklar bittikten sonra kendinizin hazırladığı bir shell script taskı çalışsın ve çıktı olarak tüm taskların başarılı bir şekilde bittiğini yazsın.
-  
-Not: Servisleri docker compose şeklinde ve LocalExecutor olarak kurabilirsiniz. Docker hub üzerinden Bitnami/airflow olarak aratabilirsiniz.
-
-
 
 *****Helper Informations*******
 
@@ -82,7 +67,7 @@ python3 -m venv --upgrade
 
 Create User for UI:
 
-airflow users create  --username admin --firstname Peter --lastname Parker --role Admin --password admin --email admin@airflow
+airflow users create  --username admin --firstname melih --lastname gor --role Admin --password admin --email admin@airflow
 
 
 
@@ -94,7 +79,7 @@ from airflow.operators.email_operator import EmailOperator
 
 
 default_args = {
-	'owner': ISTDSA
+	'owner': acme
 	'email': ['admin@airflow.com, airflow@airflow.com],
 	'email_on_failure': True,
     'retries': 1
